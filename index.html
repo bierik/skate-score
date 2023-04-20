@@ -20,6 +20,14 @@
     </style>
 </head>
 <body>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZiJvxE6so4TSf2FD7D4ESyqpbkGiuPrPFjOtmdufjZdMZ1oSCukhzAiZgH57JoGQUX1Uib0mRNYA5/pubhtml?gid=1125043263&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    <iframe></iframe>
+    <script>
+        const refreshToken = new Date().getTime()
+        const iframe = document.querySelector('iframe')
+        const search = document.location.search
+        const query = new URLSearchParams(search)
+        const url = query.get('url')
+        iframe.src = url + "&refresh_token=" + refreshToken
+    </script>
 </body>
 </html>
